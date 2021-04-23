@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <section class="bg-color-black">
+
+        <section class="section-main.title py-4">
+            <div class="main-title d-flex justify-content-center">
+                <h1>Concesionaria Delux-Car </h1>
+            </div>
+            <div class="main-subtitle d-flex justify-content-center">
+                <h2>Bienvenidos</h2>
+            </div>
+        </section>
+
+        <section class="section-catalogue py-4 border-top border-dark">
+            <div class="title-catalogue d-flex justify-content-center">
+                <h5>Acontinuacion te mostramos nuestro catalogo de vehiculos disponibles</h5>
+            </div>
+
+            <div class="container-message-important d-flex justify-content-center mt-3 ">
+                <div class="message-important col-9 p-3 border border-dark font-size-0-7-rem text-color-white">
+                    * Antes de que pases a visualiar nuestro catalogo nos gustaria mencionarte que, en estos
+                    momentos nuestra pagina se encuentra en fase alpha, asi que nos gustaria pedirte tu ayuda para corregir
+                    cualquier tipo de error que pudiese existir en los datos de nuestros vehiculos, ademas si en nuestro catalogo
+                    no encontraste un vehiculo que fuese de tu interes, en la parte inferior del lado derecho de la pagina
+                    encontraras un "boton" para agregar ese a nuestro catalogo,
+                    tu opinion es muy importante para nosotros gracias por tu atencion y disfruta.*
+                </div>
+            </div>
+
+        </section>
+
+        <section class="section-catalogue-cars py4">
+
+            <div id="cars-container" class="row justify-content-center">
+
+            </div>
+        </section>
+
+        <div class="btn-add-new-car d-flex justify-content-end py-4">
+            <button id="btn-add-new-car" class="btn btn-primary" onclick="ShowAddNewCar(),resetDataForm(),changeButtonAtAddNewCar()">Agregar nuevo vehiculo</button>
+        </div>
+
+        <section id="section-add-new-car" class="py-4 d-none">
+            <div class="form-add-new-car border border-dark border-5 container">
+                <div class="card-body">
+                    <form id="form-card-data" action="/" onsubmit="event.preventDefault(),ocultShowAddNewCar(),ActionBtn(),resetDataForm()" >
+                        <div class="container-title-form d-flex justify-content-center">
+                            <div class="title-form">
+                                <h1>Datos del vehiculo</h1>
+                            </div>
+                        </div>
+
+                        <div class="data-form-container-1 d-flex justify-content-around mt-3">
+                            <div class="mb-3 col-3 ">
+                                <label for="bran-car" class="form-label">Marca</label>
+                                <input type="text" class="form-control" id="bran-car" placeholder="Marca del vehiculo" required>
+                            </div>
+                            <div class="mb-3 col-3 ">
+                                <label for="model-car" class="form-label">Modelo</label>
+                                <input type="text" class="form-control" id="model-car" placeholder="Modelo del vehiculo" required>
+                            </div>
+                            <div class="mb-3 col-3 ">
+                                <label for="color-car" class="form-label">Color</label>
+                                <input type="text" class="form-control" id="color-car" placeholder="Color del vehiculo" required>
+                            </div>
+                        </div>
+
+                        <div class="data-form-container-2 d-flex justify-content-around mt-3">
+                            <div class="mb-3 col-3 ">
+                                <label for="year-car" class="form-label">Año</label>
+                                <input type="text" class="form-control" id="year-car" placeholder="Año de lanzamiento" required>
+                            </div>
+                            <div class="mb-3 col-3 ">
+                                <label for="price-car" class="form-label">Precio</label>
+                                <input type="text" class="form-control" id="price-car" placeholder="Precio del vehiculo en USD" required>
+                            </div>
+                            <div class="mb-3 col-3 ">
+                                <label for="image-car" class="form-label">Imagen</label>
+                                <input type="text" class="form-control" id="image-car" placeholder="URL (Imagen representativa)" required>
+                            </div>
+                        </div>
+
+                        <div class="btn-add-car mt-3 d-flex justify-content-end">
+                            <button id="send-new-car-catalogue" type="submit" class="btn btn-primary">Agregar al catalogo</button>
+                            <button id="Edit-data-car-catalogue" type="submit" class="btn btn-warning d-none">Editar datos del vehiculo</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </section>
+
+    </section>
+
+
+    <script src="Crud-Agencia.js"></script>
+    <script src="https://kit.fontawesome.com/fd48df72fc.js" crossorigin="anonymous"></script>
+</body>
+</html>
